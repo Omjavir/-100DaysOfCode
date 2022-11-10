@@ -23,3 +23,49 @@
 //     return -1
 // }
 // console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
+
+
+
+// // ************* Day 2 **************
+// // *** Check if given string are isomorphic or not
+// var isIsomorphic = function (s, t) {
+//     if (s.length !== t.length) return false;
+//     const mapa = new Map();
+//     const mapb = new Map();
+//     for (let i = 0; i < s.length; i++) {
+//         if (mapa.has(s[i])) {
+//             if (mapa.get(s[i]) !== t[i]) {
+//                 return false;
+//             }
+//         } else {
+//             mapa.set(s[i], t[i])
+//         }
+//         if (mapb.has(t[i])) {
+//             if (mapb.get(t[i]) !== s[i]) {
+//                 return false;
+//             }
+//         } else {
+//             mapb.set(t[i], s[i])
+//         }
+//     }
+//     return true
+// };
+// console.log(isIsomorphic('paper', 'titer'));
+
+
+// // *** Check is one string are subsequence of another string.
+// var isSubsequence = function (str1, str2) {
+//     let i = 0;
+//     let j = 0;
+//     while (i < str1.length) {
+//         if (j === str2.length) {
+//             return false;
+//         }
+//         if (str1[i] === str2[j]) {
+//             i++;
+//         }
+//         j++;
+//     };
+//     return true;
+// };
+// console.log(isSubsequence('ace', 'bakcfoe'));
