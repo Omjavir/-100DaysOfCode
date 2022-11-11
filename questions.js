@@ -69,3 +69,31 @@
 //     return true;
 // };
 // console.log(isSubsequence('ace', 'bakcfoe'));
+
+
+
+// // ************* Day 3 **************
+// Merge two sorted linked list
+// var mergeTwoLists = function (l1, l2) {
+//     if (!l1 || !l2) return l1 || l2;
+//     const linkThem = (smaller, greater) => {
+//         smaller.next = mergeTwoLists(smaller.next, greater);
+//         return smaller;
+//     };
+//     return l1.val < l2.val ? linkThem(l1, l2) : linkThem(l2, l1);
+// };
+
+// // Reverse a linked list
+// var reverseList = function (node) {
+//     var prev = null;
+//     var current = node;
+//     var next = null;
+//     while (current != null) {
+//         next = current.next;
+//         current.next = prev;
+//         prev = current;
+//         current = next;
+//     }
+//     node = prev;
+//     return node;
+// };
