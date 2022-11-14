@@ -154,3 +154,62 @@
 // var containsDuplicate = function (array) {
 //     return (new Set(array)).size !== array.length;
 // };
+
+
+
+// // ************* Day 6 **************
+// // Two sum
+// // Input: nums = [2, 7, 11, 15], target = 9
+// // Output: [0, 1]
+// // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+// const twoSum = (array, goal) => {
+//     let indexes = [];
+
+//     for (let i = 0; i < array.length; i++) {
+//         for (let j = i + 1; j < array.length; j++) {
+//             if (array[i] + array[j] === goal) {
+//                 indexes.push(i);
+//                 indexes.push(j);
+//             }
+//         }
+//     }
+//     return indexes;
+// }
+// console.log(twoSum([3,2,4], 7));
+
+
+// function sumTwo(array, goal) {
+//     let indexes = [];
+//     for (let i = 0; i <= array.length; i++) {
+//         for (let j = array.length - 1; j >= 0; j--) {
+//             if (array[i] + array[j] === goal) {
+//                 indexes.push(i);
+//                 indexes.push(j)
+//             }
+//         }
+//     }
+//     return indexes
+// }
+// console.log(sumTwo([3, 2, 4], 7));
+
+
+// // Merge Two array
+// var merge = function (nums1, m, nums2, n) {
+//     const len = m + n
+//     nums1.splice(len - n)
+//     for (let i = 0; i < n; i++) {
+//         nums1.push(nums2[i])
+//     }
+
+//     for (let j = 1; j < len; j++) {
+//         if (nums1[j - 1] || nums1[j - 1] === 0) {
+//             if (nums1[j] < nums1[j - 1]) {
+//                 let tmp = nums1[j - 1]
+//                 nums1[j - 1] = nums1[j]
+//                 nums1[j] = tmp
+//                 j = j - 2
+//             }
+//         }
+//     }
+//     return nums1
+// };
