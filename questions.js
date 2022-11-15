@@ -213,3 +213,46 @@
 //     }
 //     return nums1
 // };
+
+
+
+// // ************* Day 7 **************
+// // Intersection of two arrays ||
+// // Example 1:
+// // Input: nums1 = [1, 2, 2, 1], nums2 = [2, 2]
+// // Output: [2, 2]
+// // Example 2:
+// // Input: nums1 = [4, 9, 5], nums2 = [9, 4, 9, 8, 4]
+// // Output: [4, 9]
+// // Explanation: [9, 4] is also accepted.
+// var intersect = function (arr1, arr2) {
+//     const res = [];
+//     const { length: len1 } = arr1;
+//     const { length: len2 } = arr2;
+//     const smaller = (len1 < len2 ? arr1 : arr2).slice();
+//     const bigger = (len1 >= len2 ? arr1 : arr2).slice();
+//     for (let i = 0; i < smaller.length; i++) {
+//         if (bigger.indexOf(smaller[i]) !== -1) {
+//             res.push(smaller[i]);
+//             bigger.splice(bigger.indexOf(smaller[i]), 1, undefined);
+//         }
+//     };
+//     return res;
+// };
+
+
+// // Best Time to Buy and Sell Stock
+// var maxProfit = function (prices) {
+//     let profit = 0;
+//     for (let i = 0; i < prices.length - 1; i++) {
+//         for (let j = i + 1; j < prices.length; j++) {
+//             const currentProfit = prices[j] - prices[i];
+
+//             if (currentProfit > profit) {
+//                 profit = currentProfit;
+//             }
+//         }
+//     }
+
+//     return profit;
+// };
