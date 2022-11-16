@@ -256,3 +256,42 @@
 
 //     return profit;
 // };
+
+
+
+// // ************* Day 8 **************
+// // Reshape the matric
+// var matrixReshape = function (arr, r, c) {
+//     if (r * c !== arr.length * arr[0].length) {
+//         return arr
+//     }
+//     const res = []
+//     let row = []
+//     arr.forEach(items => items.forEach((num) => {
+//         row.push(num)
+//         if (row.length === c) {
+//             res.push(row)
+//             row = []
+//         }
+//     }))
+//     return res
+// };
+
+// // Pascal's Triangle
+// var generate = function (numRows) {
+//     if (numRows === 0) return [];
+//     if (numRows === 1) return [[1]];
+//     let result = [];
+//     for (let row = 1; row <= numRows; row++) {
+//         let arr = [];
+//         for (let col = 0; col < row; col++) {
+//             if (col === 0 || col === row - 1) {
+//                 arr.push(1);
+//             } else {
+//                 arr.push((result[row - 2][col - 1] + result[row - 2][col]));
+//             }
+//         }
+//         result.push(arr);
+//     }
+//     return result;
+// };
