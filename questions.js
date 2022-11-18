@@ -337,3 +337,74 @@
 //     }
 //     return false
 // };
+
+
+
+// // ************* Day 10 **************
+// // Given a string s, find the first non - repeating character in it and return its index.If it does not exist, return -1.
+// // Example 1:
+// // Input: s = "leetcode"
+// // Output: 0
+// // Example 2:
+// // Input: s = "loveleetcode"
+// // Output: 2
+// var firstUniqChar = function (s) {
+//     for (let i = 0; i < s.length; i++) {
+//         if (s.indexOf(s.substring(i, i + 1)) === s.lastIndexOf(s.substring(i, i + 1))) {
+//             return i
+//         }
+//     }
+//     return -1
+// };
+
+
+// // Ransom Number
+// // Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+// // Each letter in magazine can only be used once in ransomNote.
+// // Example 1:
+// // Input: ransomNote = "a", magazine = "b"
+// // Output: false
+// // Example 2:
+// // Input: ransomNote = "aa", magazine = "ab"
+// // Output: false
+// // Example 3:
+// // Input: ransomNote = "aa", magazine = "aab"
+// // Output: true
+// var canConstruct = function (ransomNote, magazine) {
+//     const map = new Map();
+//     for (let i = 0; i < magazine.length; i++) {
+//         if (map.has(magazine[i])) {
+//             map.set(magazine[i], map.get(magazine[i]) + 1)
+//         } else {
+//             map.set(magazine[i], 1)
+//         }
+//     }
+//     for (let i = 0; i < ransomNote.length; i++) {
+//         if (!map.has(ransomNote[i]) || map.get(ransomNote[i]) === 0) {
+//             return false;
+//         }
+//         map.set(ransomNote[i], map.get(ransomNote[i]) - 1)
+//     }
+//     return true;
+// };
+
+
+// // Valid Anagram
+// // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+// // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+// // Example 1:
+// // Input: s = "anagram", t = "nagaram"
+// // Output: true
+// // Example 2:
+// // Input: s = "rat", t = "car"
+// // Output: false
+// var isAnagram = function (s, t) {
+//     if (s.length !== t.length) {
+//         return false;
+//     }
+//     if (s.split('').sort().join('') === t.split('').sort().join('')) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// };
