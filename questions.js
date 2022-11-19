@@ -408,3 +408,55 @@
 //         return false;
 //     }
 // };
+
+
+
+// // ************* Day 11 **************
+// Linked List Cycle
+var hasCycle = function (head) {
+    let set = new Set()
+    // for traversing, initialize current with head node
+    let current = head
+    //traverse the linked list
+    while (current) {
+        if (set.has(current)) {
+            // if duplication occurs, return true
+            return true
+        } else {
+            set.add(current)
+        }
+        current = current.next
+    }
+    // traverse is completed, cycle not found
+    return false
+};
+
+
+// Merge Two Sorted List
+var mergeTwoLists = function (l1, l2) {
+    if (!l1 || !l2) return l1 || l2;
+    const linkThem = (smaller, greater) => {
+        smaller.next = mergeTwoLists(smaller.next, greater);
+        return smaller;
+    };
+    return l1.val < l2.val ? linkThem(l1, l2) : linkThem(l2, l1);
+};
+
+
+// Remove Linked list Elements
+var removeElements = function (head, val) {
+    if (head == null) return null;
+    var node = new ListNode(0);
+    var prev = node;
+    node.next = head;
+    while (head != null) {
+        if (head.val != val) {
+            prev = head;
+            head = head.next;
+        } else {
+            prev.next = head.next;
+            head = head.next;
+        }
+    }
+    return node.next;
+};
