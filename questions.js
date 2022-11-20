@@ -299,7 +299,7 @@
 
 
 // // ************* Day 9 **************
-// // Valid Sudoku 
+// // Valid Sudoku
 // var isValidSudoku = function (board) {
 //     let set = new Set()
 
@@ -412,51 +412,83 @@
 
 
 // // ************* Day 11 **************
-// Linked List Cycle
-var hasCycle = function (head) {
-    let set = new Set()
-    // for traversing, initialize current with head node
-    let current = head
-    //traverse the linked list
-    while (current) {
-        if (set.has(current)) {
-            // if duplication occurs, return true
-            return true
-        } else {
-            set.add(current)
-        }
-        current = current.next
-    }
-    // traverse is completed, cycle not found
-    return false
-};
+// // Linked List Cycle
+// var hasCycle = function (head) {
+//     let set = new Set()
+//     // for traversing, initialize current with head node
+//     let current = head
+//     //traverse the linked list
+//     while (current) {
+//         if (set.has(current)) {
+//             // if duplication occurs, return true
+//             return true
+//         } else {
+//             set.add(current)
+//         }
+//         current = current.next
+//     }
+//     // traverse is completed, cycle not found
+//     return false
+// };
 
 
-// Merge Two Sorted List
-var mergeTwoLists = function (l1, l2) {
-    if (!l1 || !l2) return l1 || l2;
-    const linkThem = (smaller, greater) => {
-        smaller.next = mergeTwoLists(smaller.next, greater);
-        return smaller;
-    };
-    return l1.val < l2.val ? linkThem(l1, l2) : linkThem(l2, l1);
-};
+// // Merge Two Sorted List
+// var mergeTwoLists = function (l1, l2) {
+//     if (!l1 || !l2) return l1 || l2;
+//     const linkThem = (smaller, greater) => {
+//         smaller.next = mergeTwoLists(smaller.next, greater);
+//         return smaller;
+//     };
+//     return l1.val < l2.val ? linkThem(l1, l2) : linkThem(l2, l1);
+// };
 
 
-// Remove Linked list Elements
-var removeElements = function (head, val) {
-    if (head == null) return null;
-    var node = new ListNode(0);
-    var prev = node;
-    node.next = head;
-    while (head != null) {
-        if (head.val != val) {
-            prev = head;
-            head = head.next;
-        } else {
-            prev.next = head.next;
-            head = head.next;
-        }
-    }
-    return node.next;
-};
+// // Remove Linked list Elements
+// var removeElements = function (head, val) {
+//     if (head == null) return null;
+//     var node = new ListNode(0);
+//     var prev = node;
+//     node.next = head;
+//     while (head != null) {
+//         if (head.val != val) {
+//             prev = head;
+//             head = head.next;
+//         } else {
+//             prev.next = head.next;
+//             head = head.next;
+//         }
+//     }
+//     return node.next;
+// };
+
+
+
+// // ************* Day 12 **************
+// Reverse a Linked List
+// var reverseList = function (node) {
+//     var prev = null;
+//     var current = node;
+//     var next = null;
+//     while (current != null) {
+//         next = current.next;
+//         current.next = prev;
+//         prev = current;
+//         current = next;
+//     }
+//     node = prev;
+//     return node;
+// };
+
+
+// // Remove duplicates from linked list
+// var deleteDuplicates = function (head) {
+//     let current = head
+//     while (current !== null && current.next !== null) {
+//         if (current.val === current.next.val) {
+//             current.next = current.next.next
+//         } else {
+//             current = current.next
+//         }
+//     }
+//     return head
+// };
